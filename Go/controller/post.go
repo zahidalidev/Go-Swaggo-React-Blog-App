@@ -97,7 +97,7 @@ func (c* Controller) UpdatePost(ctx *gin.Context){
 	ctx.JSON(http.StatusOK, rowsAffected)
 }
 
-func (c* Controller) ListAllPosts(ctx *gin.Context){
+func (c* Controller) ListPosts(ctx *gin.Context){
 	db := mysql.Connect()
 	
 	rows, err := db.Query(`select * from posts`)

@@ -23,7 +23,7 @@ func main() {
 
 		users := v1.Group("/allusers")
 		{	
-			users.GET("", c.ListAccounts)
+			users.GET("", c.ListUsers)
 		}
 
 		post := v1.Group("/post")
@@ -35,7 +35,7 @@ func main() {
 		
 		posts := v1.Group("/listallposts")
 		{
-			posts.GET("", c.ListAllPosts)
+			posts.GET("", c.ListPosts)
 		}
 	
 	}
