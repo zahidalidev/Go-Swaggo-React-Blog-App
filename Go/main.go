@@ -8,8 +8,6 @@ import (
 	_ "github.com/swaggo/swag/example/GO/docs"
 )
 
-
-
 func CORSMiddleware() gin.HandlerFunc {
 	return func(c *gin.Context) {
 		c.Writer.Header().Set("Access-Control-Allow-Origin", "http://localhost:3000")
@@ -58,7 +56,7 @@ func main() {
 			post.PUT("", c.UpdatePost)
 		}
 		
-		posts := v1.Group("/listallposts")
+		posts := v1.Group("/allposts")
 		{
 			posts.GET("", c.ListPosts)
 		}

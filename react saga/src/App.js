@@ -1,26 +1,22 @@
-import axios from "axios";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getUsers } from "./actions";
+import { GET_USERS } from "./store/user";
 
 const App = () => {
-  // const dispatch = useDispatch();
-  // const users = useSelector((state) => state);
-  // console.log("users: ", users);
+  const dispatch = useDispatch();
+  const users = useSelector((state) => state);
 
-  const getAllUsers = async () => {
-    const data = await axios.get("http://localhost:8080/api/v1/allusers");
-    console.log("data: ", data);
-  };
+  console.log("users: ", users);
 
   useEffect(() => {
-    getAllUsers();
-    // dispatch(getUsers());
+    dispatch(GET_USERS());
   }, []);
 
   return (
     <div>
-      <h1></h1>
+      {/* {users.map((item, index) => (
+        <h1 key={index.toString()}>{item.name}</h1>
+      ))} */}
     </div>
   );
 };
