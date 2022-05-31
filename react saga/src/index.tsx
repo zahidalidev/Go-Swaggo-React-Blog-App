@@ -6,7 +6,7 @@ import reportWebVitals from "./reportWebVitals";
 import createSagaMiddleware from "redux-saga";
 import rootSaga from "./sagas";
 import { Provider } from "react-redux";
-import { logger } from "redux-logger";
+// import { logger } from "redux-logger";
 import { configureStore, getDefaultMiddleware } from "@reduxjs/toolkit";
 
 import userReducer from "./store/user";
