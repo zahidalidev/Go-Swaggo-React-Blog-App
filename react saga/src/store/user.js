@@ -8,6 +8,7 @@ const slice = createSlice({
       return user;
     },
     USERS_RECIEVED: (user, action) => {
+      console.log("action user: ", action);
       return action.json;
     },
   },
