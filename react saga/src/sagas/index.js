@@ -11,7 +11,7 @@ function* fetchUsers() {
   yield put({ type: USERS_RECIEVED, json });
 }
 
-function* actionWatcher() {
+function* actionWatcherUser() {
   yield takeLatest(GET_USERS, fetchUsers);
 }
 
@@ -22,10 +22,10 @@ function* fetchPosts() {
   yield put({ type: POSTS_RECIEVED, json });
 }
 
-function* actionWatcher2() {
+function* actionWatcherPost() {
   yield takeLatest(GET_POSTS, fetchPosts);
 }
 
 export default function* rootSaga() {
-  yield all([actionWatcher(), actionWatcher2()]);
+  yield all([actionWatcherUser(), actionWatcherPost()]);
 }
